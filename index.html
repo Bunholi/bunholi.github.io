@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Ingrid V Bunholi, PhD: marine molecular ecologist working on reef fishes, eDNA, sharks and rays.">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Ingrid Bunholi</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap">
+<style>
+/* Layout: a single descent. Each section sits a little deeper (darker water) than the one above,
+   marked by a depth eyebrow; content in a 1100px column, text held to ~65ch. */
+:root{
+  --surface:#F2F7F6;      /* shallow water / page */
+  --deep:#0B3440;         /* the colour we sink toward */
+  --ink:#0F2A31;          /* text */
+  --ink-soft:#4B6970;     /* secondary text */
+  --tide:#1D7377;         /* accent: reef-channel teal */
+  --sand:#C9B48A;         /* small warm counterweight, used sparingly */
+  --line:color-mix(in oklab,var(--ink) 14%,transparent);
+  --card:color-mix(in oklab,var(--surface) 70%,white);
+  --ph:color-mix(in oklab,var(--tide) 8%,var(--surface));
+  --display:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --step-0:1rem; --step-1:1.2rem; --step-2:1.6rem; --step-3:2.3rem; --step-4:clamp(2.6rem,6vw,4.4rem);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --surface:#0C1D23; --deep:#02090C; --ink:#DCEBEA; --ink-soft:#93AFB2; --tide:#5FC1BE; --sand:#D8C496;
+  --card:color-mix(in oklab,var(--surface) 85%,white 4%); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --surface:#0C1D23; --deep:#02090C; --ink:#DCEBEA; --ink-soft:#93AFB2; --tide:#5FC1BE; --sand:#D8C496;
+  --card:color-mix(in oklab,var(--surface) 85%,white 4%); color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--surface);color:var(--ink);font-family:var(--body);font-size:var(--step-0);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--tide);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--tide);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;line-height:1.15}
+p{margin:0}
+em.sp{font-style:italic}
+
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* nav */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in oklab,var(--surface) 88%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.mark{font-family:var(--display);font-size:1.15rem;color:var(--ink);text-decoration:none;white-space:nowrap}
+.mark span{color:var(--tide);font-style:italic}
+nav.top ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;overflow-x:auto;scrollbar-width:none}
+nav.top ul::-webkit-scrollbar{display:none}
+nav.top li a{font-size:.85rem;color:var(--ink-soft);text-decoration:none;letter-spacing:.02em;white-space:nowrap}
+nav.top li a{display:block;padding-block:4px;border-bottom:1.5px solid transparent}
+nav.top li a:hover{color:var(--ink)}
+nav.top li a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--tide)}
+.view[hidden]{display:none!important}
+main{min-height:70vh}
+@media (max-width:760px){nav.top .wrap{flex-wrap:wrap;row-gap:8px;padding-block:12px 6px}nav.top ul{width:100%;gap:18px;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}}
+
+/* sections & depth */
+section{padding-block:88px;background:color-mix(in oklab,var(--surface),var(--deep) var(--d,0%))}
+.depth{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tide);display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.depth::before{content:"";width:28px;height:1px;background:currentColor}
+.depth b{font-weight:500;color:var(--ink-soft)}
+h2{font-size:var(--step-3);margin-bottom:28px;max-width:20ch}
+.lede{font-size:var(--step-1);color:var(--ink-soft);max-width:62ch}
+
+/* image placeholders */
+.ph{position:relative;background:var(--ph);border:1px dashed color-mix(in oklab,var(--tide) 45%,transparent);border-radius:3px;display:grid;place-items:center;text-align:center;padding:16px;color:var(--ink-soft);max-width:100%;overflow:hidden}
+.ph::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(170deg,transparent 0 22px,color-mix(in oklab,var(--tide) 7%,transparent) 22px 23px);pointer-events:none}
+.ph span{position:relative;z-index:1;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;line-height:1.5}
+.ph span strong{display:block;font-family:var(--body);font-size:.85rem;letter-spacing:0;font-weight:500;color:var(--ink);margin-bottom:2px}
+
+/* hero */
+.hero{padding-block:72px 64px;--d:0%}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
+.hero .kicker{font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:22px}
+.hero h1{font-size:var(--step-4);font-weight:300;letter-spacing:-.01em}
+.hero h1 i{color:var(--tide);font-weight:300}
+.hero .thesis{font-family:var(--display);font-size:var(--step-2);font-weight:300;line-height:1.3;margin-top:26px;color:var(--ink)}
+.hero .role{margin-top:22px;color:var(--ink-soft)}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.links a{font-size:.85rem;text-decoration:none;color:var(--ink);border:1px solid var(--line);padding:7px 14px;border-radius:999px;transition:border-color .2s,color .2s}
+.links a:hover{border-color:var(--tide);color:var(--tide)}
+.links a.primary{background:var(--tide);border-color:var(--tide);color:var(--surface)}
+.links a.primary:hover{color:var(--surface);opacity:.9}
+.avatar{justify-self:center;width:min(360px,100%);aspect-ratio:1;border-radius:50%;padding:10px;background:conic-gradient(from 200deg,var(--tide),color-mix(in oklab,var(--tide) 30%,var(--surface)),var(--tide));box-shadow:0 30px 60px -30px color-mix(in oklab,var(--deep) 65%,transparent)}
+.avatar img{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center 30%;border:6px solid var(--surface)}
+@media (max-width:820px){.hero .wrap{grid-template-columns:1fr;gap:36px}.avatar{order:-1;justify-self:start;width:min(220px,70%)}}
+
+
+/* home water: blurred, drifting light in the palette's teals; flows behind the hero and the news feed */
+.home-water{position:relative;overflow:hidden;isolation:isolate;background:var(--surface)}
+.home-water > section{background:transparent}
+.home-water .water{position:absolute;inset:-40px;width:calc(100% + 80px);height:calc(100% + 80px);z-index:-1;pointer-events:none;filter:blur(30px) saturate(1.1);
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 72%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,#000 72%,transparent 100%)}
+
+/* news feed */
+.news{padding-block:24px 96px}
+.news h2{margin-bottom:32px}
+.news-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,8fr);gap:28px;align-items:start}
+.news-photo{margin:0;position:sticky;top:calc(env(safe-area-inset-top,0px) + 84px)}
+.news-photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:6px;box-shadow:0 24px 48px -28px color-mix(in oklab,var(--deep) 60%,transparent)}
+.feed{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.feed li{display:flex;min-width:0}
+@media (max-width:900px){.news-grid{grid-template-columns:1fr}.news-photo{position:static;max-width:420px}}
+@media (max-width:620px){.feed{grid-template-columns:1fr}}
+.feed .item{flex:1;padding:20px 22px 22px;border-radius:6px;background:color-mix(in oklab,var(--surface) 72%,transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid color-mix(in oklab,var(--tide) 14%,transparent);display:flex;flex-direction:column;gap:8px}
+.feed .meta{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.feed time{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap;font-variant-numeric:tabular-nums}
+.feed h3{font-family:var(--display);font-size:1.3rem;font-weight:400;line-height:1.25;margin-top:4px}
+.feed p{font-size:.92rem;color:var(--ink-soft)}
+.chip{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tide)}
+.feed li[data-type="award"] .chip,.feed li[data-type="milestone"] .chip{color:color-mix(in oklab,var(--sand) 55%,var(--ink))}
+
+/* contact: specimen plate of reef fishes as a quiet background; black drops out via screen blend, text side stays plain */
+.fishbg{position:relative;isolation:isolate;overflow:hidden}
+.fishbg::before{content:"";position:absolute;inset:0;z-index:-1;background:url("img/fish-band.jpg") center/contain no-repeat;mix-blend-mode:screen;opacity:.52}
+.fishbg::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,color-mix(in oklab,var(--surface),var(--deep) 90%) 0%,color-mix(in oklab,var(--surface),var(--deep) 90%) 8%,color-mix(in oklab,color-mix(in oklab,var(--surface),var(--deep) 90%) 50%,transparent) 30%,transparent 48%)}
+.fishbg .wrap > div:first-child,.fishbg .address{text-shadow:0 1px 10px color-mix(in oklab,var(--surface),var(--deep) 90%),0 0 2px color-mix(in oklab,var(--surface),var(--deep) 90%)}
+@media (max-width:820px){.fishbg::before{background-size:cover;opacity:.4}.fishbg::after{background:color-mix(in oklab,color-mix(in oklab,var(--surface),var(--deep) 90%) 35%,transparent)}}
+
+/* conservation & outreach: wide reef header with a wavy lower edge and a slow drift */
+.tabhero{position:relative;height:clamp(240px,34vw,480px);overflow:hidden;display:flex;align-items:flex-end;background:#0B3A5A;
+  -webkit-mask-image:linear-gradient(#000,#000),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cpath d='M0 0H1200V22C1100 40 1000 6 900 20C800 34 700 4 600 18C500 32 400 6 300 20C200 34 100 8 0 22Z'/%3E%3C/svg%3E");mask-image:linear-gradient(#000,#000),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cpath d='M0 0H1200V22C1100 40 1000 6 900 20C800 34 700 4 600 18C500 32 400 6 300 20C200 34 100 8 0 22Z'/%3E%3C/svg%3E");
+  -webkit-mask-size:100% calc(100% - 39px),100% 40px;mask-size:100% calc(100% - 39px),100% 40px;
+  -webkit-mask-position:top,bottom;mask-position:top,bottom;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.tabhero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;animation:reefdrift 28s ease-in-out infinite alternate;transform-origin:60% 40%}
+.tabhero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,22,40,0) 40%,rgba(3,22,40,.55) 85%)}
+.tabhero .wrap{position:relative;z-index:1;width:100%;padding-block:0 60px}
+.tabhero-kicker{font-family:var(--mono);font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:#CDEFEB;margin-bottom:10px}
+.tabhero h1{color:#fff;font-size:var(--step-4);font-weight:300;text-shadow:0 2px 24px rgba(0,20,40,.45)}
+@keyframes reefdrift{from{transform:scale(1.02) translateX(0)}to{transform:scale(1.1) translateX(-2%)}}
+@media (prefers-reduced-motion:reduce){.tabhero img{animation:none}}
+#conservation,#about{padding-top:56px}
+
+/* about: field photo slideshow, medium size, crossfades every 3 s */
+.gallery{margin-top:72px;display:flex;flex-direction:column;align-items:center}
+.slideshow{position:relative;width:100%;max-width:760px;aspect-ratio:3/2;border-radius:6px;overflow:hidden;background:var(--deep);box-shadow:0 30px 60px -36px color-mix(in oklab,var(--deep) 70%,transparent)}
+.slide{position:absolute;inset:0;margin:0;opacity:0;transition:opacity .9s ease}
+.slide.is-on{opacity:1}
+.slide .slide-bg{position:absolute;inset:-30px;width:calc(100% + 60px);height:calc(100% + 60px);object-fit:cover;filter:blur(22px) brightness(.7) saturate(1.1);display:block}
+.slide .slide-img{position:relative;width:100%;height:100%;object-fit:contain;display:block}
+.slide figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 16px;color:#fff;font-size:.88rem;background:linear-gradient(180deg,transparent,rgba(3,22,40,.65))}
+.slideshow .nav{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.18);color:#fff;font-size:1.6rem;line-height:1;cursor:pointer;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:.75;transition:opacity .2s,background .2s}
+.slideshow .nav:hover,.slideshow .nav:focus-visible{opacity:1;background:rgba(255,255,255,.3)}
+.slideshow .prev{left:12px}.slideshow .next{right:12px}
+.thumbs{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:14px;max-width:760px}
+.thumb{width:84px;aspect-ratio:3/2;padding:0;border:2px solid transparent;border-radius:4px;overflow:hidden;background:var(--deep);cursor:pointer;opacity:.6;transition:opacity .2s,border-color .2s}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb:hover{opacity:.9}
+.thumb[aria-current="true"]{opacity:1;border-color:var(--tide)}
+@media (max-width:520px){.thumb{width:64px}}
+@media (prefers-reduced-motion:reduce){.slide{transition:none}}
+
+/* dive depth: About (0 m) → Research (20 m) → Publications (40 m) → Conservation (60 m) → Outreach (75 m) → Contact (90 m) */
+.view:not([data-route="home"]):not([data-route="contact"]) section{--d:0% !important}
+.view:not([data-route="home"]){background:var(--surface);color:var(--ink);min-height:calc(100vh - 124px)}
+.view,#outreach{--line:color-mix(in oklab,var(--ink) 16%,transparent);--ph:color-mix(in oklab,var(--tide) 10%,var(--surface));--card:color-mix(in oklab,var(--surface) 80%,var(--ink) 4%)}
+#outreach{background:var(--surface);color:var(--ink)}
+.view[data-route="about"]{--surface:#EEF6F5;--ink:#0F2A31;--ink-soft:#4B6970;--tide:#1D7377}
+.view[data-route="research"]{--surface:#D5E9EA;--ink:#0F2A31;--ink-soft:#405F67;--tide:#196A70}
+.view[data-route="conservation"]{--surface:#235C6C;--ink:#EAF5F5;--ink-soft:#B3D2D7;--tide:#8FE0D8}
+#outreach{--surface:#143A50;--ink:#E6F1F4;--ink-soft:#A3C1CC;--tide:#7CD3D0}
+.view[data-route="publications"]{--surface:#B7D7DB;--ink:#0D2830;--ink-soft:#33545D;--tide:#135D66}
+.view[data-route="contact"]{--surface:#0B2633;--deep:#04121A}
+@media (prefers-color-scheme:dark){
+:root:not([data-theme="light"]) .view[data-route="about"]{--surface:#16363F;--ink:#DCEBEA;--ink-soft:#97B3B7;--tide:#6CC9C4}
+:root:not([data-theme="light"]) .view[data-route="research"]{--surface:#122E38;--ink:#DCEBEA;--ink-soft:#97B3B7;--tide:#6CC9C4}
+:root:not([data-theme="light"]) .view[data-route="conservation"]{--surface:#0C2129;--ink:#DCEBEA;--ink-soft:#97B3B7;--tide:#6CC9C4}
+:root:not([data-theme="light"])  #outreach{--surface:#06141B;--ink:#DCEBEA;--ink-soft:#97B3B7;--tide:#6CC9C4}
+:root:not([data-theme="light"]) .view[data-route="publications"]{--surface:#0F2730;--ink:#DCEBEA;--ink-soft:#97B3B7;--tide:#6CC9C4}
+:root:not([data-theme="light"]) .view[data-route="contact"]{--surface:#051116;--deep:#02080B}
+}
+:root[data-theme="dark"] .view[data-route="about"]{--surface:#16363F;--ink:#DCEBEA;--ink-soft:#97B3B7;--tide:#6CC9C4}
+:root[data-theme="dark"] .view[data-route="research"]{--surface:#122E38;--ink:#DCEBEA;--ink-soft:#97B3B7;--tide:#6CC9C4}
+:root[data-theme="dark"] .view[data-route="conservation"]{--surface:#0C2129;--ink:#DCEBEA;--ink-soft:#97B3B7;--tide:#6CC9C4}
+:root[data-theme="dark"]  #outreach{--surface:#06141B;--ink:#DCEBEA;--ink-soft:#97B3B7;--tide:#6CC9C4}
+:root[data-theme="dark"] .view[data-route="publications"]{--surface:#0F2730;--ink:#DCEBEA;--ink-soft:#97B3B7;--tide:#6CC9C4}
+:root[data-theme="dark"] .view[data-route="contact"]{--surface:#051116;--deep:#02080B}
+
+.out-photo{position:relative;margin:0;aspect-ratio:1/1;max-width:100%;border-radius:6px;overflow:hidden;background:var(--ph)}
+.out-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.out-photo:hover img{transform:scale(1.04)}
+.out-photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 12px 10px;font-size:.78rem;color:#fff;background:linear-gradient(180deg,transparent,rgba(3,22,40,.7))}
+@media (prefers-reduced-motion:reduce){.out-photo img{transition:none}}
+.outreach-rows li{display:grid;grid-template-columns:minmax(0,1fr) auto;justify-content:normal;align-items:baseline;gap:14px}
+.outreach-rows .kind{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tide)}
+.outreach-rows small{display:block;font-size:.8rem;color:var(--ink-soft);margin-top:2px}
+.outreach-rows a{color:var(--ink);text-decoration:none;font-weight:500}
+.outreach-rows a:hover,.outreach-rows a:focus-visible{color:var(--tide);text-decoration:underline;text-underline-offset:3px}
+.outreach-rows .ext{font-size:.8em;color:var(--tide)}
+.res-photo{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border-radius:6px;background:var(--ph)}
+/* about */
+#about{--d:3%}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.about-grid p+p{margin-top:16px}
+.about-grid .body{max-width:60ch;color:var(--ink)}
+.edu{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.edu li{display:grid;grid-template-columns:5.5rem 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+.edu .yr{font-family:var(--mono);font-size:.78rem;color:var(--tide);padding-top:3px}
+.edu li.now > span:last-child{font-weight:600}
+.edu li.now small{font-weight:400}
+.edu small{display:block;color:var(--ink-soft);font-size:.83rem}
+.small-label{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 12px}
+@media (max-width:820px){.about-grid{grid-template-columns:1fr;gap:40px}}
+
+
+
+/* research */
+#research{--d:6%}
+.themes{display:grid;grid-template-columns:repeat(2,1fr);gap:48px 40px;margin-top:48px}
+.theme{display:flex;flex-direction:column;gap:14px;min-width:0}
+.theme .ph{aspect-ratio:16/10}
+.theme h3{font-size:var(--step-2)}
+.theme p{color:var(--ink-soft);max-width:58ch}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font-family:var(--mono);font-size:.7rem;color:var(--ink-soft);border:1px solid var(--line);padding:2px 8px;border-radius:2px}
+@media (max-width:760px){.themes{grid-template-columns:1fr}}
+
+/* conservation */
+#conservation{--d:10%}
+.impact{list-style:none;margin:40px 0 0;padding:0;display:grid;gap:0;border-top:1px solid var(--line)}
+.impact li{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr);gap:32px;padding:24px 0;border-bottom:1px solid var(--line)}
+.impact h3{font-size:var(--step-1);font-family:var(--body);font-weight:600;line-height:1.35}
+.impact .who{font-family:var(--mono);font-size:.72rem;color:var(--tide);margin-top:6px;letter-spacing:.04em}
+.impact p{color:var(--ink-soft);max-width:62ch}
+@media (max-width:700px){.impact li{grid-template-columns:1fr;gap:8px}}
+
+/* publications */
+#publications{--d:17%}
+.pubbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:8px}
+.filters{display:flex;flex-wrap:wrap;gap:6px}
+.filters button{font:inherit;font-size:.82rem;color:var(--ink-soft);background:transparent;border:1px solid var(--line);padding:6px 12px;border-radius:999px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.pubs{list-style:none;margin:28px 0 0;padding:0}
+.pubs li{display:grid;grid-template-columns:4rem minmax(0,1fr);gap:20px;padding:18px 0;border-top:1px solid var(--line)}
+.pubs .y{font-family:var(--mono);font-size:.8rem;color:var(--tide);padding-top:3px;font-variant-numeric:tabular-nums}
+.pubs .t{font-family:var(--display);font-size:1.18rem;line-height:1.35}
+.pubs .t a{color:inherit;text-decoration:none;background-image:linear-gradient(var(--tide),var(--tide));background-size:0 1px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .25s}
+.pubs .t a:hover,.pubs .t a:focus-visible{color:var(--tide);background-size:100% 1px}
+.pubs .t .ext{font-size:.8em;color:var(--tide);opacity:.7}
+.pubs .a{font-size:.85rem;color:var(--ink-soft);margin-top:4px}
+.pubs .a b{color:var(--ink);font-weight:600}
+.pubs .j{font-size:.85rem;font-style:italic;color:var(--ink-soft)}
+.badge{font-family:var(--mono);font-style:normal;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--sand);border:1px solid currentColor;padding:1px 6px;border-radius:2px;margin-left:8px;white-space:nowrap}
+.pubnote{margin-top:24px;font-size:.88rem;color:var(--ink-soft)}
+
+/* rows (outreach lists) */
+.rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.rows li{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+.rows li span:last-child{font-family:var(--mono);font-size:.78rem;color:var(--ink-soft);white-space:nowrap;font-variant-numeric:tabular-nums;padding-top:2px}
+
+/* outreach */
+#outreach{--d:13%}
+.outreach-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;margin-top:40px;align-items:start}
+.ph-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ph-row .ph{aspect-ratio:1/1}
+@media (max-width:820px){.outreach-grid{grid-template-columns:1fr}}
+
+/* network */
+.net{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:40px;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.net div{padding:22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-width:0}
+.net h3{font-family:var(--body);font-size:.98rem;font-weight:600;line-height:1.35}
+.net .inst{font-size:.85rem;color:var(--ink-soft);margin-top:2px}
+.net .rel{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--tide);margin-top:10px;text-transform:uppercase}
+@media (max-width:820px){.net{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.net{grid-template-columns:1fr}}
+
+/* contact */
+#contact,#contact-page{--d:90%;padding-block:72px}
+#contact-page{min-height:calc(100vh - 140px);display:flex;align-items:center}
+#contact-page > .wrap{width:100%}
+#contact{clip-path:inset(0)}
+#contact.fishbg::before{position:fixed;inset:0;background-position:center bottom}
+@media (max-width:820px){#contact.fishbg::before{inset:auto 0 0 0;height:60vh;background-size:cover;background-position:center}}
+#contact-page.fishbg::before{background:url("img/fish-plate.jpg") right center/contain no-repeat}
+
+.contact{display:block}
+.contact > div{max-width:min(560px,50%)}
+.contact .address{margin-top:28px}
+.contact h2{font-size:var(--step-4);font-weight:300;max-width:14ch;margin-bottom:24px}
+.email{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:8px}
+.email .mail{text-decoration-color:color-mix(in oklab,var(--tide) 60%,transparent);font-family:var(--mono);font-size:1rem;color:var(--ink);word-break:break-all}
+.email .mail:hover{color:var(--tide)}
+.email button{font:inherit;font-size:.8rem;background:transparent;color:var(--tide);border:1px solid var(--tide);border-radius:999px;padding:5px 12px;cursor:pointer}
+.address{font-size:.92rem;color:var(--ink-soft);line-height:1.7}
+footer{background:color-mix(in oklab,var(--surface),var(--deep) 96%);border-top:1px solid var(--line)}
+footer .wrap{padding-block:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--ink-soft)}
+@media (max-width:820px){.contact > div{max-width:100%}}
+
+/* dark: deeper sections keep text legible since ink is light; in light mode, deep sections get light text */
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) #contact,:root:not([data-theme="dark"]) #contact-page,:root:not([data-theme="dark"]) footer{--ink:#E8F2F1;--ink-soft:#A9C3C5;--tide:#7FD3CF;--line:color-mix(in oklab,#E8F2F1 18%,transparent);color:var(--ink)}}
+:root[data-theme="light"] #contact,:root[data-theme="light"] #contact-page,:root[data-theme="light"] footer{--ink:#E8F2F1;--ink-soft:#A9C3C5;--tide:#7FD3CF;--line:color-mix(in oklab,#E8F2F1 18%,transparent);color:var(--ink)}
+</style>
+
+</head>
+<body>
+<nav class="top" aria-label="Pages">
+  <div class="wrap">
+    <a class="mark" href="#home">Ingrid <span>Bunholi</span></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#conservation">Conservation &amp; Outreach</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="views">
+<div class="view" data-route="home">
+<div class="home-water">
+<canvas class="water" id="water" aria-hidden="true"></canvas>
+<section class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Marine molecular ecologist</p>
+      <h1>Ingrid V <i>Bunholi</i>, PhD</h1>
+      <p class="thesis">Postdoctoral researcher at the University of Texas at Austin Marine Science Institute (starting Jan/2027).</p>
+      <p class="role" style="color:var(--ink)">I combine population genomics, environmental DNA, and community ecology to support the monitoring and conservation of reef fishes, estuarine fishes, sharks, and rays.</p>
+      <div class="links">
+        <a class="primary" href="files/Ingrid_Bunholi_CV.pdf" target="_blank" rel="noopener">My CV (PDF)</a>
+        <a href="https://scholar.google.com/citations?user=YKqf3ysAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="#" data-todo="linkedin">LinkedIn</a>
+      </div>
+    </div>
+    <div class="avatar"><img src="img/portrait-circle.jpg" alt="Portrait of Ingrid Vasconcellos Bunholi" width="351" height="351"></div>
+  </div>
+</section>
+<section class="news" id="news" aria-labelledby="news-h">
+  <div class="wrap">
+    <p class="depth">News</p>
+    <h2 id="news-h">What's new.</h2>
+    <div class="news-grid">
+    <figure class="news-photo"><img src="img/portrait-dive.jpg" alt="Ingrid scuba diving, holding a sample bag of small reef fish" width="869" height="1086" loading="lazy"></figure>
+    <ol class="feed" id="feed">
+      <li data-type="milestone"><div class="item"><div class="meta"><span class="chip">Milestone</span><time>Nov 2026</time></div><h3>Ph.D. defended</h3><p>Completed my Ph.D. in Marine Science at the UT Austin Marine Science Institute.</p></div></li>
+      <li data-type="field"><div class="item"><div class="meta"><span class="chip">Workshop</span><time>Nov 2026</time></div><h3>Indo-Pacific goby taxonomy workshop</h3><p>I just took part in an integrative taxonomic workshop on Indo-Pacific gobies at the UW Fish Collection with Dr. Luke Tornabene.</p></div></li>
+      <li data-type="talk"><div class="item"><div class="meta"><span class="chip">Talk</span><time>Oct 2026</time></div><h3>Last PhD chapter at the global eDNA conference</h3><p>I just presented the final chapter of my PhD at the global eDNA conference in Seattle, WA.</p></div></li>
+      <li data-type="paper"><div class="item"><div class="meta"><span class="chip">Paper</span><time>2026</time></div><h3>How habitat shapes a goby's social life</h3><p>Out in <em>The American Naturalist</em>: living inside a sponge constrains the social organization and life history of a sponge-dwelling goby.</p></div></li>
+    </ol>
+    </div>
+  </div>
+</section>
+</div>
+
+<section id="contact" class="fishbg">
+  <div class="wrap contact">
+    <div>
+      <p class="depth">Contact</p>
+      <h2>Let's connect.</h2>
+      <div class="email">
+        <a class="mail" id="addr" href="mailto:ingrid.bunholi@utexas.edu">ingrid.bunholi@utexas.edu</a>
+        <button type="button" id="copy">Copy email</button>
+      </div>
+      <div class="address">
+      The University of Texas at Austin<br>
+      Marine Science Institute<br>
+      750 Channel View Drive<br>
+      Port Aransas, TX 78373
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+
+<div class="view" data-route="about">
+<header class="tabhero">
+  <img src="img/about-header.jpg" alt="Ingrid diving above a coral reef with reef fish swimming below" width="1800" height="756" style="object-position:center 15%">
+  <div class="wrap"><p class="tabhero-kicker">Scientist · Diver · Teacher</p><h1>About</h1></div>
+</header>
+<section id="about">
+  <div class="wrap">
+    <p class="depth"><b>0 m</b> About</p>
+    <div class="about-grid">
+      <div class="body">
+        <h2>A first-generation marine scientist from Brazil.</h2>
+        <p>I began my career using molecular tools to detect the illegal trade of sharks and rays (elasmobranchs) and to understand its impact on their conservation. That work showed me how much a single molecule can reveal about the world around us.</p>
+        <p>Today, most of my research integrates population genomics, environmental DNA, community ecology, and quantitative approaches to study biodiversity across biological scales. I focus especially on cryptobenthic reef fishes, the tiny, hidden species that make up a large share of reef fish diversity.</p>
+        <p>My long-term goal is to use molecular tools to connect the small- and large-scale patterns that shape eco-evolutionary processes. Linking these biological scales helps reveal how communities form and how they respond to ongoing environmental change.</p>
+      </div>
+      <div>
+        <p class="small-label">Career &amp; education</p>
+        <ul class="edu">
+          <li class="now"><span class="yr">2027 –</span><span>Postdoctoral Researcher<small>UT Austin Marine Science Institute · starting January 2027</small></span></li>
+          <li><span class="yr">2026</span><span>Ph.D., Marine Science<small>UT Austin Marine Science Institute · Doctoral Discovery Fellow</small></span></li>
+          <li><span class="yr">2022</span><span>M.S., Biology (Ecology)<small>Indiana State University</small></span></li>
+          <li><span class="yr">2020</span><span>M.S., Biology (Zoology)<small>Universidade Estadual Paulista (UNESP)</small></span></li>
+          <li><span class="yr">2019</span><span>B.S., Environmental Engineering<small>Universidade Federal de São Paulo (UNIFESP)</small></span></li>
+          <li><span class="yr">2016</span><span>B.S., Marine Sciences<small>Universidade Federal de São Paulo (UNIFESP)</small></span></li>
+        </ul>
+        <p class="small-label" style="margin-top:28px">Languages</p>
+        <p style="color:var(--ink-soft);font-size:.92rem">Portuguese (native) · English (fluent) · Spanish (basic)</p>
+      </div>
+    </div>
+    <div class="gallery">
+      <div class="slideshow" id="slideshow" aria-roledescription="carousel" aria-label="Photo gallery">
+        <figure class="slide is-on" aria-hidden="false"><img class="slide-bg" src="img/about-1-microscope.jpg" alt="" aria-hidden="true" loading="lazy"><img class="slide-img" src="img/about-1-microscope.jpg" alt="Identifying characteristics of a new Eviota species from the Indo-Pacific at the University of Washington" width="480" height="640" loading="lazy"><figcaption>Identifying characteristics of a new <em>Eviota</em> species from the Indo-Pacific at the University of Washington</figcaption></figure>
+        <figure class="slide" aria-hidden="true"><img class="slide-bg" src="img/about-4-quadrat.jpg" alt="" aria-hidden="true" loading="lazy"><img class="slide-img" src="img/about-4-quadrat.jpg" alt="Conducting benthic quadrat surveys in Rio do Fogo, Rio Grande do Norte, Brazil" width="1400" height="1050" loading="lazy"><figcaption>Conducting benthic quadrat surveys in Rio do Fogo, Rio Grande do Norte, Brazil</figcaption></figure>
+        <figure class="slide" aria-hidden="true"><img class="slide-bg" src="img/about-2-sequencer.jpg" alt="" aria-hidden="true" loading="lazy"><img class="slide-img" src="img/about-2-sequencer.jpg" alt="Sequencing the first Eviota genome on an Oxford Nanopore PromethION at Northeastern University" width="480" height="640" loading="lazy"><figcaption>Sequencing the first <em>Eviota</em> genome on an Oxford Nanopore PromethION at Northeastern University</figcaption></figure>
+        <figure class="slide" aria-hidden="true"><img class="slide-bg" src="img/about-5-reef-dive.jpg" alt="" aria-hidden="true" loading="lazy"><img class="slide-img" src="img/about-5-reef-dive.jpg" alt="Searching for cryptobenthic reef fishes in Carrie Bow Cay, Belize" width="1400" height="1400" loading="lazy"><figcaption>Searching for cryptobenthic reef fishes in Carrie Bow Cay, Belize</figcaption></figure>
+        <figure class="slide" aria-hidden="true"><img class="slide-bg" src="img/about-3-lab.jpg" alt="" aria-hidden="true" loading="lazy"><img class="slide-img" src="img/about-3-lab.jpg" alt="Extracting DNA in the lab" width="640" height="480" loading="lazy"><figcaption>Extracting DNA in the lab</figcaption></figure>
+        <figure class="slide" aria-hidden="true"><img class="slide-bg" src="img/about-6-field-station.jpg" alt="" aria-hidden="true" loading="lazy"><img class="slide-img" src="img/about-6-field-station.jpg" alt="Measuring and logging cryptobenthic reef fish information in Fernando de Noronha, Brazil" width="1400" height="1050" loading="lazy"><figcaption>Measuring and logging cryptobenthic reef fish information in Fernando de Noronha, Brazil</figcaption></figure>
+        <button type="button" class="nav prev" id="slide-prev" aria-label="Previous photo">&#8249;</button>
+        <button type="button" class="nav next" id="slide-next" aria-label="Next photo">&#8250;</button>
+      </div>
+      <div class="thumbs" role="group" aria-label="Choose a photo">
+        <button type="button" class="thumb" id="thumb-0" aria-label="Show photo 1: Identifying characteristics of a new Eviota species from the Indo-Pacific at the University of Washington" aria-current="true"><img src="img/about-1-microscope.jpg" alt="" loading="lazy"></button>
+        <button type="button" class="thumb" id="thumb-1" aria-label="Show photo 2: Conducting benthic quadrat surveys in Rio do Fogo, Rio Grande do Norte, Brazil"><img src="img/about-4-quadrat.jpg" alt="" loading="lazy"></button>
+        <button type="button" class="thumb" id="thumb-2" aria-label="Show photo 3: Sequencing the first Eviota genome on an Oxford Nanopore PromethION at Northeastern University"><img src="img/about-2-sequencer.jpg" alt="" loading="lazy"></button>
+        <button type="button" class="thumb" id="thumb-3" aria-label="Show photo 4: Searching for cryptobenthic reef fishes in Carrie Bow Cay, Belize"><img src="img/about-5-reef-dive.jpg" alt="" loading="lazy"></button>
+        <button type="button" class="thumb" id="thumb-4" aria-label="Show photo 5: Extracting DNA in the lab"><img src="img/about-3-lab.jpg" alt="" loading="lazy"></button>
+        <button type="button" class="thumb" id="thumb-5" aria-label="Show photo 6: Measuring and logging cryptobenthic reef fish information in Fernando de Noronha, Brazil"><img src="img/about-6-field-station.jpg" alt="" loading="lazy"></button>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="view" data-route="research">
+<section id="research">
+  <div class="wrap">
+    <p class="depth"><b>20 m</b> Research</p>
+    <h2>Biodiversity across biological scales.</h2>
+    <div class="themes">
+      <article class="theme">
+        <img class="res-photo" src="img/res-goby.jpg" alt="A small goby resting on the surface of its host sponge" width="1280" height="800" loading="lazy">
+        <h3>Life inside a sponge</h3>
+        <p>The sponge-dwelling goby <em class="sp">Risor ruber</em> raises several life stages within a single sponge. I use it as a model for relatedness, dispersal, and social organization, and compare skin and gut microbiomes with the host sponge's to see how a habitat shapes the animal living in it.</p>
+        <div class="tags"><span>ddRAD-seq</span><span>microbiome</span><span>social structure</span></div>
+      </article>
+      <article class="theme">
+        <img class="res-photo" src="img/res-edna.jpg" alt="Ingrid collecting an environmental DNA water sample under a bridge in a Texas estuary" width="1280" height="800" loading="lazy">
+        <h3>Understanding fish communities using eDNA</h3>
+        <p>Environmental DNA and RNA let us detect fish from a water sample. Working with Texas Parks and Wildlife, I compare eDNA with long-term fisheries surveys and built the first species-specific assay for southern flounder, testing when eRNA tracks living communities better than eDNA.</p>
+        <div class="tags"><span>eDNA / eRNA</span><span>qPCR · ddPCR</span><span>estuaries</span></div>
+      </article>
+      <article class="theme">
+        <img class="res-photo" src="img/res-sharks.jpg" alt="A large school of hammerhead sharks seen from below" width="1280" height="800" loading="lazy">
+        <h3>Genetic tools for sharks and rays</h3>
+        <p>DNA barcoding and population genetics reveal which threatened species are caught, traded, and eaten, often under misleading names. This line includes the first range-wide genetic study of the angular angelshark and practical rapid-ID tools for monitoring.</p>
+        <div class="tags"><span>DNA barcoding</span><span>phylogeography</span><span>wildlife trade</span></div>
+      </article>
+      <article class="theme">
+        <img class="res-photo" src="img/res-fishes.jpg" alt="A plate of small cryptobenthic reef fishes photographed on black" width="1280" height="800" loading="lazy">
+        <h3>Genomic resources for reef fishes</h3>
+        <p>Molecular monitoring is only as good as its reference data. I co-lead a Brazil-wide reef-fish barcode gap analysis and assembled the first whole genome for the dwarfgoby genus <em class="sp">Eviota</em> with Oxford Nanopore sequencing.</p>
+        <div class="tags"><span>Nanopore WGS</span><span>reference libraries</span><span>cryptobenthic fishes</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="view" data-route="publications">
+<section id="publications">
+  <div class="wrap">
+    <p class="depth"><b>40 m</b> Publications</p>
+    <div class="pubbar">
+      <h2 style="margin:0">Selected publications.</h2>
+      <div class="filters" role="group" aria-label="Filter publications">
+        <button type="button" id="f-all" data-f="all" aria-pressed="true">All</button>
+        <button type="button" id="f-first" data-f="first" aria-pressed="false">First author</button>
+        <button type="button" id="f-reef" data-f="reef" aria-pressed="false">Reef fishes</button>
+        <button type="button" id="f-edna" data-f="edna" aria-pressed="false">eDNA</button>
+        <button type="button" id="f-elasmo" data-f="elasmo" aria-pressed="false">Sharks &amp; rays</button>
+      </div>
+    </div>
+    <ul class="pubs" id="pubs">
+      <li data-tags="first edna"><span class="y">2026</span><div><p class="t">Integrating fisheries surveys and environmental DNA to improve monitoring of southern flounder in Texas estuaries</p><p class="a"><b>Bunholi IV</b>, Kordal M, Souza CM, Olsen Z, Mauvisseau Q, Casey JM</p><p class="j">Estuaries and Coasts <span class="badge">Under review</span></p></div></li>
+      <li data-tags="reef"><span class="y">2026</span><div><p class="t">Reframing the species–energy relationship: energy quality, not quantity, promotes coastal marine biodiversity</p><p class="a">Brandl SJ, Foster NR, Semmler RF, <b>Bunholi IV</b>, et al.</p><p class="j">Nature Ecology &amp; Evolution <span class="badge">Under review</span></p></div></li>
+      <li data-tags="first reef"><span class="y">2026</span><div><p class="t"><a href="https://doi.org/10.1086/744315" target="_blank" rel="noopener">Ecological constraints of habitat specialization shape the social organization and life history of a sponge-dwelling goby<span class="ext" aria-hidden="true"> ↗</span></a></p><p class="a"><b>Bunholi IV</b>, Affleck A, Do MC, Johnson K, Ortega R, Jensen E, Tornabene L, Brandl SJ, Casey JM, Rueger T</p><p class="j">The American Naturalist</p></div></li>
+      <li data-tags="first reef"><span class="y">2026</span><div><p class="t"><a href="https://doi.org/10.1111/mec.70523" target="_blank" rel="noopener">Cryptic interactions in a marine microcosm: sponges shape the microbiome of a resident goby<span class="ext" aria-hidden="true"> ↗</span></a></p><p class="a"><b>Bunholi IV</b>, Affleck A, Johnson K, Ortega R, Freeman CJ, Rueger T, Casey JM</p><p class="j">Molecular Ecology 35(16): e70523</p></div></li>
+      <li data-tags="first edna elasmo"><span class="y">2025</span><div><p class="t"><a href="https://doi.org/10.1111/1755-0998.70044" target="_blank" rel="noopener">Rapid DNA/eDNA-based ID tools for improved chondrichthyan monitoring and management<span class="ext" aria-hidden="true"> ↗</span></a></p><p class="a"><b>Bunholi IV*</b>, Alvarenga M*, et al., Cruz VP · *equal contribution</p><p class="j">Molecular Ecology Resources, e70044</p></div></li>
+      <li data-tags="elasmo"><span class="y">2024</span><div><p class="t"><a href="https://doi.org/10.1016/j.biocon.2024.110543" target="_blank" rel="noopener">Fifteen years of elasmobranchs trade unveiled by DNA tools: lessons for enhanced monitoring and conservation actions<span class="ext" aria-hidden="true"> ↗</span></a></p><p class="a">Alvarenga M, <b>Bunholi IV</b>, Brito GR, Charvet P, Domingues RR, Siqueira MVBM, Cruz VP</p><p class="j">Biological Conservation 292: 110543</p></div></li>
+      <li data-tags="first edna"><span class="y">2023</span><div><p class="t"><a href="https://doi.org/10.1002/edn3.476" target="_blank" rel="noopener">Environmental DNA and RNA in aquatic community ecology: toward methodological standardization<span class="ext" aria-hidden="true"> ↗</span></a></p><p class="a"><b>Bunholi IV</b>, Foster NR, Casey JM</p><p class="j">Environmental DNA 5: 1133–1147</p></div></li>
+      <li data-tags=""><span class="y">2023</span><div><p class="t"><a href="https://doi.org/10.1007/s12601-023-00107-0" target="_blank" rel="noopener">Seasonal variability of marine fish diversity in relation to water quality of the East Midnapore Coast of West Bengal, India<span class="ext" aria-hidden="true"> ↗</span></a></p><p class="a">Chini DS, Mondal N, Kar A, <b>Bunholi IV</b>, et al.</p><p class="j">Ocean Science Journal 58(2): 13</p></div></li>
+      <li data-tags="first elasmo"><span class="y">2021</span><div><p class="t"><a href="https://doi.org/10.1007/s10750-022-04855-3" target="_blank" rel="noopener">Multilocus phylogeography of the endemic and endangered angular angelshark (<em class="sp">Squatina guggenheim</em>) in the Southwest Atlantic Ocean<span class="ext" aria-hidden="true"> ↗</span></a></p><p class="a"><b>Bunholi IV</b>, Ferrette BLS, Domingues RR, Rotundo MM, et al.</p><p class="j">Hydrobiologia 849(9): 2177–2192</p></div></li>
+      <li data-tags="edna"><span class="y">2021</span><div><p class="t"><a href="https://doi.org/10.1002/edn3.308" target="_blank" rel="noopener">Plant–animal interactions in the era of environmental DNA (eDNA): a review<span class="ext" aria-hidden="true"> ↗</span></a></p><p class="a">Banerjee P, Stewart K, Antognazza C, <b>Bunholi IV</b>, Deiner K, Barnes M, et al.</p><p class="j">Environmental DNA 4(5): 987–999</p></div></li>
+      <li data-tags="elasmo"><span class="y">2021</span><div><p class="t"><a href="https://doi.org/10.1007/s12686-021-01194-8" target="_blank" rel="noopener">From molecule to conservation: DNA-based methods to overcome frontiers in the shark and ray fin trade<span class="ext" aria-hidden="true"> ↗</span></a></p><p class="a">Domingues RR, <b>Bunholi IV</b>, Pinhal D, Antunes A, Mendonça FF</p><p class="j">Conservation Genetics Resources</p></div></li>
+      <li data-tags="elasmo"><span class="y">2019</span><div><p class="t"><a href="https://doi.org/10.3390/genes10040304" target="_blank" rel="noopener">DNA barcode reveals the bycatch of endangered batoid species in the Southwest Atlantic<span class="ext" aria-hidden="true"> ↗</span></a></p><p class="a">Ferrette BLS, Domingues RR, Rotundo MM, Miranda MP, <b>Bunholi IV</b>, et al.</p><p class="j">Genes 10(4)</p></div></li>
+      <li data-tags="first elasmo"><span class="y">2018</span><div><p class="t"><a href="https://doi.org/10.1016/j.fishres.2018.05.018" target="_blank" rel="noopener">The fishing and illegal trade of the angelshark: DNA barcoding against misleading identifications<span class="ext" aria-hidden="true"> ↗</span></a></p><p class="a"><b>Bunholi IV</b>, Ferrette BLS, Biasi JB, Magalhães CO, Rotundo MM, et al.</p><p class="j">Fisheries Research 206: 193–197</p></div></li>
+    </ul>
+    <p class="pubnote">Also: a practitioner guide, <em>From Sample to Rapid DNA and eDNA Identification</em> (UNESP, 2025), and a book chapter on angelsharks (MarBrasil, 2021). Full list on <a href="https://scholar.google.com/citations?user=YKqf3ysAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
+  </div>
+</section>
+</div>
+<div class="view" data-route="conservation">
+<header class="tabhero">
+  <img src="img/reef-header.jpg" alt="Elkhorn coral with a school of blue tangs swimming beneath the sunlit surface" width="1800" height="756">
+  <div class="wrap"><p class="tabhero-kicker">From the reef to the community</p><h1>Conservation &amp; Outreach</h1></div>
+</header>
+<section id="conservation">
+  <div class="wrap">
+    <p class="depth"><b>60 m</b> Applied conservation</p>
+    <h2>Research that reaches management.</h2>
+    <ul class="impact">
+      <li><div><h3>Rapid DNA/eDNA practitioner guide</h3><p class="who">Open access · English &amp; Portuguese</p></div><p>A step-by-step guide that helps fisheries and wildlife-trade monitors identify sharks and rays from samples quickly, published alongside a peer-reviewed toolkit in <em>Molecular Ecology Resources</em> and featured in IUCN Shark News.</p></li>
+      <li><div><h3>First southern flounder eDNA assay</h3><p class="who">With Texas Parks &amp; Wildlife Department</p></div><p>The first species-specific primer for <em class="sp">Paralichthys lethostigma</em>, integrated with fisheries survey data to evaluate how Texas estuaries are monitored.</p></li>
+      <li><div><h3>Angular angelshark population genetics</h3><p class="who">Relevant to IUCN reassessment</p></div><p>The first range-wide genetic study of <em class="sp">Squatina guggenheim</em> in the Southwest Atlantic, providing evidence for conservation planning of an endangered endemic species.</p></li>
+      <li><div><h3>Brazil reef-fish barcode initiative</h3><p class="who">Co-lead · 15+ researchers</p></div><p>A national gap analysis and reference library combining field expeditions and museum collections, so that eDNA surveys of Brazilian reefs can name what they detect.</p></li>
+    </ul>
+  </div>
+</section>
+<section id="outreach">
+  <div class="wrap">
+    <p class="depth"><b>75 m</b> Outreach</p>
+    <h2>Sharing the science.</h2>
+    <div class="outreach-grid">
+      <div>
+        <ul class="rows outreach-rows">
+          <li><span><a href="https://www.researchgate.net/publication/403729862_Rapid_DNA_and_eDNA_Tools_are_Transforming_Shark_and_Ray_Protection_IUCN_SSC_Shark_News" target="_blank" rel="noopener">Rapid DNA and eDNA tools are transforming shark and ray protection<span class="ext" aria-hidden="true"> ↗</span></a><small>IUCN SSC Shark News</small></span><span>2026</span></li>
+          <li><span><a href="https://www.portasouthjetty.com/articles/identifying-dna-signatures-of-sharks-stingrays/" target="_blank" rel="noopener">Identifying DNA signatures of sharks, stingrays<span class="ext" aria-hidden="true"> ↗</span></a><small>Port Aransas South Jetty</small></span><span>Oct 2025</span></li>
+          <li><span><a href="https://utmsi.utexas.edu/fast-solutions-for-an-urgent-problem/" target="_blank" rel="noopener">Fast genetic identification to protect sharks and rays<span class="ext" aria-hidden="true"> ↗</span></a><small>UT Marine Science Institute feature</small></span><span>2025</span></li>
+          <li><span><a href="https://www.portasouthjetty.com/articles/discovering-hidden-allies-in-the-sea/" target="_blank" rel="noopener">Discovering hidden allies in the sea<span class="ext" aria-hidden="true"> ↗</span></a><small>Port Aransas South Jetty</small></span><span>Aug 2024</span></li>
+          <li><span><a href="https://www.forbes.com/sites/melissacristinamarquez/2024/07/20/fifteen-years-of-elasmobranchs-trade-unveiled-by-dna-tools/" target="_blank" rel="noopener">Fifteen years of elasmobranchs trade unveiled by DNA tools<span class="ext" aria-hidden="true"> ↗</span></a><small>Forbes · by Melissa Cristina Márquez</small></span><span>Jul 2024</span></li>
+          <li><span><a href="https://www.portasouthjetty.com/articles/water-analysis-goldmine-of-info/" target="_blank" rel="noopener">Water analysis “goldmine” of info<span class="ext" aria-hidden="true"> ↗</span></a><small>Port Aransas South Jetty</small></span><span>Jun 2023</span></li>
+        </ul>
+      </div>
+      <div class="ph-row">
+        <figure class="out-photo"><img src="img/out-talk.jpg" alt="Ingrid presenting her eDNA research on reef fish biogeography across the Amazon plume" width="900" height="900" loading="lazy"></figure>
+        <figure class="out-photo"><img src="img/out-classroom.jpg" alt="Ingrid teaching a DNA extraction activity at Island Science Day" width="900" height="900" loading="lazy"></figure>
+        <figure class="out-photo"><img src="img/out-boat.jpg" alt="Ingrid and the field team on a boat before a research dive" width="900" height="900" loading="lazy"></figure>
+        <figure class="out-photo"><img src="img/out-lab.jpg" alt="Ingrid at her lab bench in the Casey Lab" width="900" height="900" loading="lazy"></figure>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+
+
+
+
+
+<div class="view" data-route="contact">
+<section id="contact-page" class="fishbg">
+  <div class="wrap contact">
+    <div>
+      <p class="depth"><b>90 m</b> Contact</p>
+      <h2>Let's connect.</h2>
+      <div class="email">
+        <a class="mail" id="addr2" href="mailto:ingrid.bunholi@utexas.edu">ingrid.bunholi@utexas.edu</a>
+        <button type="button" id="copy2">Copy email</button>
+      </div>
+      <div class="address">
+      The University of Texas at Austin<br>
+      Marine Science Institute<br>
+      750 Channel View Drive<br>
+      Port Aransas, TX 78373
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Ingrid Vasconcellos Bunholi</span><span>Port Aransas, Texas · São Paulo, Brazil</span></div>
+</footer>
+
+<script>
+(function(){
+  var routes={}, views=document.querySelectorAll('.view'), links=document.querySelectorAll('nav.top li a');
+  views.forEach(function(v){routes[v.dataset.route]=v});
+  function show(){
+    var h=(location.hash||'').slice(1), target=null;
+    var jump=null; if(h==='top')h='home'; if(h==='outreach'){h='conservation';jump='outreach'}
+    if(!routes[h])h='home';
+    views.forEach(function(v){v.hidden=v!==routes[h]});
+    links.forEach(function(a){if(a.getAttribute('href')==='#'+h)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+    var cur=document.querySelector('nav.top a[aria-current]'), ul=document.querySelector('nav.top ul'); if(cur&&ul){var li=cur.parentNode;ul.scrollLeft=li.offsetLeft-ul.offsetLeft-ul.clientWidth/2+li.offsetWidth/2}
+    function place(){ if(jump){var el=document.getElementById(jump);if(el){el.scrollIntoView();return}} window.scrollTo(0,0); }
+    place(); requestAnimationFrame(place); setTimeout(place,60);
+  }
+  window.addEventListener('hashchange',show);
+  window.addEventListener('load',function(){var h=(location.hash||'').slice(1); if(h!=='outreach')window.scrollTo(0,0)}); show();
+})();
+</script>
+<script>
+(function(){
+  var box=document.getElementById('slideshow'); if(!box)return;
+  var slides=box.querySelectorAll('.slide'), dots=document.querySelectorAll('.thumbs .thumb'), i=0, timer=null, paused=false;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var view=box.closest('.view');
+  function go(n){
+    i=(n+slides.length)%slides.length;
+    slides.forEach(function(sl,k){sl.classList.toggle('is-on',k===i);sl.setAttribute('aria-hidden',k===i?'false':'true')});
+    dots.forEach(function(d,k){if(k===i)d.setAttribute('aria-current','true');else d.removeAttribute('aria-current')});
+  }
+  function tick(){ if(!paused&&!document.hidden&&!(view&&view.hidden))go(i+1) }
+  function start(){ stop(); if(!reduce)timer=setInterval(tick,3000) }
+  function stop(){ if(timer)clearInterval(timer); timer=null }
+  document.getElementById('slide-prev').addEventListener('click',function(){go(i-1);start()});
+  document.getElementById('slide-next').addEventListener('click',function(){go(i+1);start()});
+  dots.forEach(function(d,k){d.addEventListener('click',function(){go(k);start()})});
+  box.addEventListener('mouseenter',function(){paused=true});
+  box.addEventListener('mouseleave',function(){paused=false});
+  box.addEventListener('focusin',function(){paused=true});
+  box.addEventListener('focusout',function(){paused=false});
+  var x0=null; box.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  box.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40){go(i+(dx<0?1:-1));start()}x0=null});
+  window.addEventListener('hashchange',function(){if((location.hash||'')==='#about'){go(0);start()}});
+  start();
+})();
+</script>
+<script>
+(function(){
+  var cv=document.getElementById('water'); if(!cv||!cv.getContext)return;
+  var ctx=cv.getContext('2d'), hero=cv.parentNode, view=hero.closest('.view');
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var W=0,H=0,S=.5, cols=[], dark=false;
+  function rgb(v){var d=document.createElement('i');d.style.color=getComputedStyle(document.documentElement).getPropertyValue(v);document.body.appendChild(d);var c=getComputedStyle(d).color.match(/\d+(\.\d+)?/g).slice(0,3).map(Number);d.remove();return c}
+  function readColors(){
+    var t=rgb('--tide'), s=rgb('--surface');
+    dark=(s[0]+s[1]+s[2])/3<100;
+    var aqua=[Math.round(t[0]*.5+170*.5),Math.round(t[1]*.5+230*.5),Math.round(t[2]*.5+225*.5)];
+    var deep=rgb('--deep');
+    cols=dark?[t,aqua,[40,110,130]]:[t,aqua,[120,190,200],deep];
+  }
+  function size(){var r=cv.getBoundingClientRect();W=Math.max(1,Math.round(r.width*S));H=Math.max(1,Math.round(r.height*S));cv.width=W;cv.height=H}
+  var blobs=[];for(var i=0;i<7;i++)blobs.push({x:.15+Math.random()*.8,y:.1+Math.random()*.7,r:.28+Math.random()*.22,sp:.05+Math.random()*.08,ph:Math.random()*6.28,c:i%4,depth:.4+Math.random()*.8});
+  var px=.6,py=.4,tx=.6,ty=.4,ripples=[],lastR=0;
+  function ptr(e){var r=hero.getBoundingClientRect();tx=(e.clientX-r.left)/r.width;ty=(e.clientY-r.top)/r.height;
+    var now=performance.now(); if(!reduce&&now-lastR>140&&tx>0&&tx<1&&ty>0&&ty<1){ripples.push({x:tx,y:ty,t:now,big:e.type==='pointerdown'});lastR=now;if(ripples.length>14)ripples.shift()}}
+  hero.addEventListener('pointermove',ptr,{passive:true});hero.addEventListener('pointerdown',ptr,{passive:true});
+  window.addEventListener('scroll',function(){ty=.4+Math.min(.4,window.scrollY/900)},{passive:true});
+  function rgba(c,a){return 'rgba('+c[0]+','+c[1]+','+c[2]+','+a+')'}
+  function draw(t){
+    var m=Math.max(W,H), aB=dark?.30:.24, aR=dark?.20:.16;
+    px+=(tx-px)*.035; py+=(ty-py)*.035;
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<blobs.length;i++){var b=blobs[i];
+      var x=(b.x+Math.sin(t*b.sp+b.ph)*.09+(px-.5)*.10*b.depth)*W,
+          y=(b.y+Math.cos(t*b.sp*.8+b.ph)*.07+(py-.5)*.08*b.depth)*H,
+          r=b.r*m*(1+Math.sin(t*b.sp*1.7+b.ph)*.08);
+      var g=ctx.createRadialGradient(x,y,0,x,y,r),c=cols[b.c%cols.length];
+      g.addColorStop(0,rgba(c,aB));g.addColorStop(.55,rgba(c,aB*.4));g.addColorStop(1,rgba(c,0));
+      ctx.fillStyle=g;ctx.fillRect(0,0,W,H);}
+    var now=performance.now();
+    ripples=ripples.filter(function(rp){return now-rp.t<2600});
+    for(var j=0;j<ripples.length;j++){var rp=ripples[j],k=(now-rp.t)/2600,rad=(rp.big?.05+k*.42:.03+k*.26)*m,w=.05*m,a=aR*(1-k)*(rp.big?1.4:1);
+      var g2=ctx.createRadialGradient(rp.x*W,rp.y*H,Math.max(0,rad-w),rp.x*W,rp.y*H,rad+w);
+      g2.addColorStop(0,rgba(cols[1],0));g2.addColorStop(.5,rgba(cols[1],a));g2.addColorStop(1,rgba(cols[1],0));
+      ctx.fillStyle=g2;ctx.fillRect(0,0,W,H);}
+  }
+  function loop(ts){
+    if(view&&view.hidden||document.hidden){setTimeout(function(){requestAnimationFrame(loop)},400);return}
+    draw(ts/1000);requestAnimationFrame(loop);
+  }
+  readColors();size();
+  window.addEventListener('resize',size);
+  if(window.matchMedia)matchMedia('(prefers-color-scheme: dark)').addEventListener('change',function(){readColors();if(reduce)draw(0)});
+  try{new MutationObserver(function(){readColors();if(reduce)draw(0)}).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']})}catch(e){}
+  window.addEventListener('hashchange',function(){setTimeout(function(){size();if(reduce)draw(0)},0)});
+  if(reduce)draw(12);else requestAnimationFrame(loop);
+})();
+</script>
+<script>
+(function(){
+  var btns=document.querySelectorAll('.filters button'), items=document.querySelectorAll('#pubs li');
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    var f=b.dataset.f;
+    btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+    items.forEach(function(li){li.hidden = f!=='all' && li.dataset.tags.split(' ').indexOf(f)<0});
+  })});
+  [['copy','addr'],['copy2','addr2']].forEach(function(pair){var c=document.getElementById(pair[0]), a=document.getElementById(pair[1]); if(!c)return;
+  c.addEventListener('click',function(){
+    var done=function(){c.textContent='Copied';setTimeout(function(){c.textContent='Copy email'},1600)};
+    var fallback=function(){var r=document.createRange();r.selectNodeContents(a);var s=getSelection();s.removeAllRanges();s.addRange(r);c.textContent='Selected';};
+    try{navigator.clipboard.writeText(a.textContent).then(done,fallback)}catch(e){fallback()}
+  });});
+})();
+</script>
+
+</body>
+</html>
